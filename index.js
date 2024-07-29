@@ -3,7 +3,7 @@ const addButton = document.querySelector("button.add")
 const list = document.querySelector("ul")
 
 addButton.addEventListener("click", (event) => {
-    const content = input.value;
+    const content = input.value.trim();
     input.value = "";
     if (content){
         const item = document.createElement("li");
@@ -17,7 +17,7 @@ addButton.addEventListener("click", (event) => {
         item.style.marginBottom = "8px";
         task.style.flex = 1;
 
-        task.textContent = content;
+        task.textContent = content[0].toUpperCase() + content.slice(1);
         deleteButton.textContent = "delete";
         editButton.textContent = "edit";
         
